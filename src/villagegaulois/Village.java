@@ -114,15 +114,17 @@ public class Village {
 			}
 		return find;
 		}
-		private void afficherMarche() {
+		private String afficherMarche() {
 			int nbrEtalVide = 0;
+			String texte = "";
 			for (int i =0; i < etals.length; i++) {
 				if (etals[i] == null)
 					nbrEtalVide ++;
 				else
-					etals[i].afficherEtal();
+					texte = texte + etals[i].afficherEtal();
 			}
-			System.out.println("Il reste " + nbrEtalVide + " étals non utilisés dans le marché.\n");
+			texte = texte + "Il reste " + nbrEtalVide + " étals non utilisés dans le marché.\n";
+			return texte;
 		}
 	}
 	
