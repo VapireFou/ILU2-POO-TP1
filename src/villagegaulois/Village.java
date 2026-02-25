@@ -129,10 +129,21 @@ public class Village {
 	}
 	
 	public static void main(String[] args) {
-		Marche marche = new Marche(10);
-		System.out.println(marche.trouverEtalLibre() );
-		marche.utiliserEtal(0, new Gaulois("Asterix", 12), "truc", 12);
-		System.out.println(marche.trouverEtalLibre());
-	}
-	
+		 Village village = new Village("VillageTest", 10);
+		 Marche marche = new Marche(5);
+		 Gaulois assurancetourix=new Gaulois("Assurancetourix", 3);
+		 Gaulois asterix=new Gaulois("Astérix", 15);
+		 System.out.println(marche.trouverEtalLibre());
+		 marche.utiliserEtal(0, assurancetourix, "Poisson", 12);
+		 System.out.println(marche.trouverEtalLibre());
+		 Etal[] poisson = marche.trouverEtals("Poisson");
+		 System.out.println(poisson[0].afficherEtal());
+		 Etal etal_tr= marche.trouverVendeur(assurancetourix);
+		 System.out.println(etal_tr.afficherEtal());
+		 System.out.println("Affichage\n");
+		 marche.utiliserEtal(1, asterix, "Sanglier", 9);
+		 System.out.println(marche.afficherMarche());
+		 }
+
+
 };
